@@ -16,13 +16,13 @@ restart:
 	@docker-compose restart
 
 log:
-	@docker-compose logs api
+	@docker-compose logs flask
 
 logs:
-	@docker-compose logs -f api
+	@docker-compose logs -f flask
 
 kill:
 	@docker-compose rm -sf
 
 bash:
-	@docker-compose exec api ash
+	@docker-compose exec flask ash
