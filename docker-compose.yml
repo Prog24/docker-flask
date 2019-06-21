@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  flask:
+  api:
     build: .
     ports:
       - 5000:5000
@@ -10,4 +10,14 @@ services:
     tty: true
     environment:
       TZ: Asia/Tokyo
+    links:
+      - mongo
     command: flask run --host 0.0.0.0  --port 5000 --reload
+
+  mongo:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - "20717:20717"

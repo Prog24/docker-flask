@@ -6,5 +6,4 @@ ADD src/requirements.txt $project_dir
 
 WORKDIR $project_dir
 
-RUN pip install flask
-# RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt
